@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,ElementRef,ViewChild } from '@angular/core';
 import { FormControl, Validators} from '@angular/forms';
 
 
@@ -8,10 +8,16 @@ import { FormControl, Validators} from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  title = 'internProject';
+  @ViewChild('passwordInput')
+  passwordInput!: ElementRef;
+  passwordHidden = true;  title = 'internProject';
   email = new FormControl('', [Validators.required, Validators.email]);  
   Password = new FormControl('', [Validators.required, Validators.email]);  
-
+  togglePasswordVisibility() {
+    const inputEl: HTMLInputElement = this.passwordInput.nativeElement;
+    inputEl.type = this.passwordHidden ? 'text' : 'password';
+    this.passwordHidden = !this.passwordHidden;
+  }
   getErrorMessage() {
     if (this.email.hasError('required')) {
       return 'Please enter valid email';

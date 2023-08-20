@@ -1,4 +1,9 @@
+<div id="background">
 <br><br><br><br><br>
+<div class="card grid-container2">
+  <div class="grid-child"></div>
+  <div class="grid-child"></div>
+    <div class="grid-child">
 <div class="container">
 <mat-card class="mat-card">
   <mat-card-content>
@@ -17,16 +22,24 @@
     <mat-form-field style="width: 100%;" appearance="outline">
       <mat-label>Password</mat-label>
       <mat-icon matPrefix>lock</mat-icon> <!-- Add the mat-icon as a prefix -->
-      <input matInput style="width: 100%;"  [formControl]="Password" type="password" placeholder="" minlength="6">
-      <mat-icon matSuffix>visibility</mat-icon> <!-- Add the mat-icon as a prefix -->
+      <input #passwordInput matInput style="width: 100%;"  [formControl]="Password" type="password" placeholder="" minlength="6">
+      <mat-icon matSuffix (click)="togglePasswordVisibility()" *ngIf="!passwordHidden">visibility_off</mat-icon> <!-- Add the mat-icon as a prefix -->
+      <mat-icon matSuffix (click)="togglePasswordVisibility()" *ngIf="passwordHidden">visibility</mat-icon> <!-- Add the mat-icon as a prefix -->
+
 
       <mat-error *ngIf="Password.invalid">{{getErrorPassword()}}</mat-error>
     </mat-form-field><br>
     
-    <a  style="color: black;" style="margin-left: 180px;">forgot password? </a><br><br>
+    <a  style="color: black;" style="margin-left: 150px;">forgot password? </a><br><br>
     <button routerLink="/homepage" mat-raised-button color="primary" style="width: 100%; height:40px;" >Sumbit</button>
     
     
   </mat-card-content>
 </mat-card>
+</div>
+</div>
+<div class="grid-child">
+</div>
+</div>
+<br><br><br><br><br>
 </div>
