@@ -1,0 +1,123 @@
+<mat-toolbar color="primary">
+  <button mat-button [matMenuTriggerFor]="menu"> <mat-icon>menu</mat-icon></button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Refresh</button>
+    <button mat-menu-item>Alarm</button>
+    <button mat-menu-item>User</button>
+  </mat-menu>
+  <span>Energyviss / Live Dashboard</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>refresh</mat-icon>
+
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>alarm</mat-icon>
+
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>person</mat-icon>
+  </button>
+
+</mat-toolbar>
+<div class="body1">
+  <div class="card grid-container">
+    <div class="grid-child">
+      <label>FLOOR : </label>
+      <mat-form-field>
+        <mat-label>Floor</mat-label>
+        <select matNativeControl required>
+          <option value="volvo">1</option>
+        </select>
+      </mat-form-field>
+    </div>
+    <div class="grid-child">
+      <label>SECTION : </label>
+      <mat-form-field>
+        <mat-label>Section</mat-label>
+        <select matNativeControl required>
+          <option value="volvo">Lab 1</option>
+        </select>
+      </mat-form-field>
+    </div>
+    <div class="grid-child">
+      <label>VIEW : </label>
+      <mat-form-field>
+        <mat-label>View</mat-label>
+        <select matNativeControl required>
+          <option value="volvo">Individual</option>
+        </select>
+      </mat-form-field>
+    </div>
+    <div class="grid-child"> <label>METER : </label>
+      <mat-form-field>
+        <mat-label>Meter</mat-label>
+        <select matNativeControl required>
+          <option value="volvo">Meter 1</option>
+          <option value="saab">Meter 2</option>
+          <option value="mercedes">Meter 3</option>
+          <option value="audi">Meter 4</option>
+          <option value="audi">Meter 5</option>
+        </select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="card grid-container1">
+    <div class="grid-child">
+      <span>
+        ENERGY: <span style="color: red;font-weight: bold;">156,610kWh</span>
+      </span>
+    </div>
+    <div class="grid-child">
+      <span>
+        LAST UPDATED: <span style="color: red;font-weight: bold;">22/06/2021 12:07PM</span>
+      </span>
+    </div>
+    <div class="grid-child">
+      <span>
+        NEXT HOUR PREDICTED ENERGY: <span style="color: red;font-weight: bold;">157,393,05kWh</span>
+      </span>
+    </div>
+  </div>
+  <div class="card">
+    <h1>KEY PARAMETERS</h1>
+    <div class="grid-container2">
+      <div class="grid-child">
+        <ngx-gauge [type]="gaugeType" [value]="gaugeValue" [label]="gaugeLabel" [animate]="animate"
+          [duration]="duration" [size]="size">
+        </ngx-gauge>
+      </div>
+      <div class="grid-child">
+        <ngx-gauge [type]="gaugeType" [value]="gaugeValue1" [label]="gaugeLabel1" [size]="size">
+        </ngx-gauge>
+      </div>
+      <div class="grid-child">
+        <ngx-gauge [type]="gaugeType" [value]="gaugeValue2" [label]="gaugeLabel2" [size]="size">
+        </ngx-gauge>
+      </div>
+      <div class="grid-child">
+        <ngx-gauge [type]="gaugeType" [value]="gaugeValue3" [label]="gaugeLabel3" [size]="size" [max]="max">
+        </ngx-gauge>
+      </div>
+      <div class="grid-child">
+        <ngx-gauge [type]="gaugeType" [value]="gaugeValue4" [label]="gaugeLabel4" [size]="size">
+        </ngx-gauge>
+      </div>
+    </div>
+  </div>
+  <div class="grid-container3">
+    <div class="card grid-child">
+      <h2>Power(kW)</h2>
+      <app-power-chart></app-power-chart>
+    </div>
+    <div class="card grid-child">
+      <h2>Power Factor</h2>
+      <app-power-factor-chart></app-power-factor-chart>
+    </div>
+  </div>
+
+
+  <div class="fixed-icon">
+    <mat-icon>message</mat-icon>
+  </div>
+</div>

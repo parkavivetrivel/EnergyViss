@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+body { 
+    background-color: #124191; 
+    }
+    body {
+        margin-left: 520px;margin-right: 520px; font-family: Roboto, "Helvetica Neue", sans-serif; 
+    }
+    
+    .h1{
+        color: #124191;
+    }
+    /* In your component's CSS file or global styles */
+    #primary{
+        color: #124191;
+    
+    
+    }
+      
+    
+    
+    

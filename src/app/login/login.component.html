@@ -1,0 +1,32 @@
+<br><br><br><br><br>
+<div class="container">
+<mat-card class="mat-card">
+  <mat-card-content>
+    <br>
+    <h1 class="mat-display-1"fxLayoutAlign="center center" style="color: #124191; margin-left: 95px; font-weight: 1000; border-radius: 10px;">NOKIA</h1>
+    <h1 class="mat-display-1"fxLayoutAlign="center center" style= "margin-left: 70px; ;">FACILIVISS</h1><br>
+
+    <mat-form-field appearance="outline"style="width: 100%;">
+      <mat-label >Email</mat-label>
+      <mat-icon matPrefix>account_circle</mat-icon> <!-- Add the mat-icon as a prefix -->
+      <input matInput style="width: 100%;" placeholder="" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <br>
+    <br>
+    <mat-form-field style="width: 100%;" appearance="outline">
+      <mat-label>Password</mat-label>
+      <mat-icon matPrefix>lock</mat-icon> <!-- Add the mat-icon as a prefix -->
+      <input matInput style="width: 100%;"  [formControl]="Password" type="password" placeholder="" minlength="6">
+      <mat-icon matSuffix>visibility</mat-icon> <!-- Add the mat-icon as a prefix -->
+
+      <mat-error *ngIf="Password.invalid">{{getErrorPassword()}}</mat-error>
+    </mat-form-field><br>
+    
+    <a  style="color: black;" style="margin-left: 180px;">forgot password? </a><br><br>
+    <button routerLink="/homepage" mat-raised-button color="primary" style="width: 100%; height:40px;" >Sumbit</button>
+    
+    
+  </mat-card-content>
+</mat-card>
+</div>
